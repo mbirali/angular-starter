@@ -1,0 +1,45 @@
+<div class="container w-50">
+    <h1 class="text-center pb-4 ">add or update a recipe </h1>
+    <form class="form-group">
+        
+          <div class="mb-3">
+            <label for="name" class="form-label">name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="cmd.name" id="name" placeholder="name">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">price</label>
+            <input type="price" class="form-control" name="price" [(ngModel)]="cmd.price" id="price" placeholder="price">
+          </div>
+          <div class="mb-3">
+            <button *ngIf="!addOrput" (click)="postCommande()" class="form-control btn btn-dark hvr" >add</button>
+            <button *ngIf="addOrput" (click)="putCommande()" class="form-control btn btn-warning hvr" >update</button>
+          </div>
+    </form>
+<div *ngIf="array.length == 0" class="alert alert-warning text-center">Pas de commandes </div>
+</div>
+<div *ngIf="array.length != 0" class="container w-50">
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price (MAD)</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let toutCommande of array">
+            <td scope="row">{{toutCommande.id}}</td>
+            <td>{{toutCommande.name}}</td>
+            <td>{{toutCommande.price}}</td>
+            <td><button (click)="editCommand(toutCommande)" class="btn btn-warning">update</button></td>
+            <td><button (click)="deleteCommande(toutCommande.id)" class="btn btn-danger">delete</button></td>
+        </tr>
+       
+    </tbody>
+</table>
+</div>
+
+
+
