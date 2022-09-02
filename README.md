@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Json Server
 
-fakeDatabase.json*** : used to store recipes.
+***fakeDatabase.json*** : used to store recipes.
 
 to install the JSON Server run this command `npm install -g json-server` 
 
