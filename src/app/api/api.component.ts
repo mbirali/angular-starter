@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommandesService } from '../services/commandes.service';
+import { CommandDto } from '../models/interface';
+import { CommandService } from '../services/commandes.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,62 +11,87 @@ import { CommandesService } from '../services/commandes.service';
 })
 
 export class ApiComponent implements OnInit {
-  array:any =[];
-  cmd: any={    
-    id:'',
-    name:'',
-    price:''
-  };
-  addOrput=false;
-  constructor(private commande:CommandesService) { }
+  array: CommandDto[] = new Array<CommandDto>();
 
-  ngOnInit(): void {
-    this.getCommande();
+  commandFormGroup: FormGroup = new FormGroup({
+    name: new FormControl<string>('', [
+      Validators.required,
+      Validators.minLength(3)
+    ]),
+
+    price: new FormControl<number>(+'', [
+      Validators.required,
+      Validators.pattern('[0-9]*'),
+    ])
+  });
+
+  get name() {
+    return this.commandFormGroup.get('name');
   }
 
-  getCommande() {
+  get price() {
+    return this.commandFormGroup.get('price');
+  }
 
-    this.commande.getAll()
-    .subscribe((data: any) =>{
+  addOrPut = false;
+
+  constructor(private commandService:CommandService) { }
+
+  ngOnInit(): void {
+    this.getCommand();
+  }
+
+  getCommand() {
+    this.commandService.getAll()
+    .subscribe((data: CommandDto[]) =>{
       this.array = data;
     })
   }
 
-  deleteCommande(id: any){
-    this.commande.delete(id).subscribe(
-      () => {this.array = this.array.filter( (toutCommande: { id: any; }) => toutCommande.id != id)
+  deleteCommand(id: any){
+    this.commandService.delete(id).subscribe(
+      () => {this.array = this.array.filter( (aCommand) => aCommand.id != id)
       })
   }
 
-  postCommande(){
-    this.commande.post(this.cmd)
+  postCommand(){
+    this.commandService.post(this.commandFormGroup.value)
+    /*
+      this.commandFormGroup.value is equivalent to:
+      {
+        name,
+        price
+      }
+    */
     .subscribe(
-      (toutCommande: any)=>{
-          this.array = [toutCommande, ...this.array];
-          this.videInputs();
+      (eachCommand: any)=>{
+          this.array = [eachCommand, ...this.array];
+          this.clearInputs();
     })
-    
-  }
-  //VIDER LES INPUTS
-  videInputs(){
-    this.cmd = {
-      id:'',
-      name:'',
-      price:''
-    }
-  }
-  //edit commande
-  editCommand(toutCommande:any){
-    this.cmd = toutCommande;
-    this.addOrput=true; 
+
   }
 
-  //modifier commande
-  putCommande(){
-    this.commande.updateCommande(this.cmd)
-    .subscribe( varQlq => {
-      this.videInputs();
-      this.addOrput = false;
+  // make inputs empty
+  clearInputs(){
+    this.commandFormGroup.reset;
+    // or
+    // this.commandFormGroup.get('name')?.setValue('');
+    // this.commandFormGroup.get('price')?.setValue('');
+  }
+
+  // edit commandService
+  editCommand(eachCommand: CommandDto){
+    this.commandFormGroup.get('name')?.setValue(eachCommand.name);
+    this.commandFormGroup.get('price')?.setValue(eachCommand.price);
+    this.addOrPut=true;
+  }
+
+  // update commandService
+  putCommand(){
+    this.commandService.updateCommand(this.commandFormGroup.value)
+    .subscribe( () => {
+      this.clearInputs();
+      this.addOrPut = false;
     })
   }
 }

@@ -1,6 +1,6 @@
-# A1FirstProject
+# ANGULAR-CRUD
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0
+Angular version 15.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Development server
 
@@ -10,26 +10,28 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ***fakeDatabase.json*** : used to store recipes.
 
-to install the JSON Server run this command `npm install -g json-server` 
+to install the JSON Server run:
 
-and make sure to run it : `json-server --watch fakeDatabase.json --port 42400`
+`npm install -g json-server` 
 
-## Code scaffolding
+and make sure to run it at: 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`json-server --watch fakeDatabase.json --port 42400`
 
-## Build
+## Validations
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Endpoints
 
-## Running unit tests
+`
+  GET/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  POST/ 
 
-## Running end-to-end tests
+  PUT/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  DELETE/  
+`
 
-## Further help
+## Images
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Feel free to use it and change it that can suits your needs ^^

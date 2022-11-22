@@ -22,7 +22,7 @@
     "bootstrap-icons": "^1.10.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.1",
-    "npm-check-updates": "^16.4.2",
+    "npm-check-updates": "^16.4.3",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.7",
     "tslib": "^2.4.1",
@@ -40,6 +40,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.9.3"
+    "typescript": "~4.8.2"
   }
 }

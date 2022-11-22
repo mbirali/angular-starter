@@ -12,8 +12,9 @@ import { LoginComponent } from './contact/login/login.component';
 import { RegisterComponent } from './contact/register/register.component';
 import { TitreComponent } from './components/titre/titre.component';
 import { ApiComponent } from './api/api.component';
+
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule} from '@angular/forms'
     FormsModule,
     HttpClientModule,
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: CuisineComponent},
       { path: 'burger', component: BurgerComponent},
@@ -39,7 +41,8 @@ import { FormsModule} from '@angular/forms'
       { path: 'salade', component: SaladeComponent},
       { path: 'login', component: LoginComponent},
       { path: 'register', component: RegisterComponent},
-      { path: 'api', component:ApiComponent}   
+      { path: 'api', component:ApiComponent},
+      // TODO: notFoundComponent
   ])],
   providers: [],
   bootstrap: [AppComponent]

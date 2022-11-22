@@ -1,36 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Interface } from '../models/interface';
+import { environment } from 'src/environments/environment.prod';
+import { CommandDto } from '../models/interface';
 
 @Injectable({
   providedIn: 'root'
 })
+export class CommandService {
+  urlApi= environment.api;
 
-export class CommandesService {
-  urlApi='http://localhost:42400/commandes';
-  // id: any;
   constructor(private http:HttpClient) {   }
-// GET
+
+  // GET all
   getAll(){
-    return this.http.get<Interface>(this.urlApi);
+    return this.http.get<CommandDto[]>(this.urlApi);
   }
 
-// DELETE
- delete(id: any){
-  return this.http.delete(`${this.urlApi}/${id}`);
- }
-//CREATE
- post(commandes: any){
-    return this.http.post<Interface>(this.urlApi,commandes);
- }
+  // DELETE one
+  delete(id: number){
+    return this.http.delete(`${this.urlApi}/${id}`);
+  }
 
- //update
- updateCommande(commandes:any){
-   return this.http.put(`${this.urlApi}/${commandes.id}`,commandes);
- }
- //search  Copilot by id
-  search(id:any){
-    return this.http.get<Interface>(`${this.urlApi}/${id}`); //${id}
+  // CREATE one
+  post(command: CommandDto){
+      return this.http.post<CommandDto>(this.urlApi, command);
+  }
+
+  // UPDATE one
+  updateCommand(command: CommandDto){
+    return this.http.put(`${this.urlApi}/${command.id}`, command);
+  }
+
+  // search by id
+  search(id: number){
+      return this.http.get<CommandDto>(`${this.urlApi}/${id}`); //${id}
   }
 
 }

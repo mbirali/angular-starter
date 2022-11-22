@@ -1,5 +1,5 @@
-export interface Interface {
-    id:number;
-    name:string;
-    price:number;
+export class CommandDto {
+    id?: number;
+    name!: string;
+    price!: number;
 }
