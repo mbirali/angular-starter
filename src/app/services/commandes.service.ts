@@ -32,8 +32,7 @@ export class CommandesService {
   search(id:any){
     return this.http.get<Interface>(`${this.urlApi}/${id}`); //${id}
   }
-  //deleteByPrice
-   
+
 }
 
 

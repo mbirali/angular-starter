@@ -10,7 +10,7 @@ import { CommandesService } from '../services/commandes.service';
 
 export class ApiComponent implements OnInit {
   array:any =[];
-  cmd: any={
+  cmd: any={    
     id:'',
     name:'',
     price:''
@@ -59,7 +59,7 @@ export class ApiComponent implements OnInit {
     this.addOrput=true; 
   }
 
-  //mofifier commande
+  //modifier commande
   putCommande(){
     this.commande.updateCommande(this.cmd)
     .subscribe( varQlq => {

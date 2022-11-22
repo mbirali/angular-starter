@@ -15,8 +15,10 @@
             <button *ngIf="addOrput" (click)="putCommande()" class="form-control btn btn-warning hvr" >update</button>
           </div>
     </form>
+
 <div *ngIf="array.length == 0" class="alert alert-warning text-center">Pas de commandes </div>
 </div>
+
 <div *ngIf="array.length != 0" class="container w-50">
 <table class="table table-striped table-bordered">
     <thead>
