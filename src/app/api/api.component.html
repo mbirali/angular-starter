@@ -42,20 +42,20 @@
   <table class="table table-striped table-bordered">
       <thead>
           <tr>
-              <th>id</th>
-              <th>name</th>
-              <th>price (MAD)</th>
+              <th>#Id</th>
+              <th>Name</th>
+              <th>Price (MAD)</th>
               <th>Edit</th>
               <th>Delete</th>
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let toutCommand of array">
-              <td scope="row">{{toutCommand.id}}</td>
-              <td>{{toutCommand.name}}</td>
-              <td>{{toutCommand.price}}</td>
-              <td><button (click)="editCommand(toutCommand)" class="btn btn-warning">update</button></td>
-              <td><button (click)="deleteCommand(toutCommand.id)" class="btn btn-danger">delete</button></td>
+          <tr *ngFor="let eachCmd of array">
+              <td scope="row">{{eachCmd.id}}</td>
+              <td>{{eachCmd.name}}</td>
+              <td>{{eachCmd.price}}</td>
+              <td><button (click)="editCommand(eachCmd)" class="btn btn-warning">update</button></td>
+              <td><button (click)="deleteCommand(eachCmd.id)" class="btn btn-danger">delete</button></td>
           </tr>
 
       </tbody>

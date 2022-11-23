@@ -14,6 +14,8 @@ export class ApiComponent implements OnInit {
   array: CommandDto[] = new Array<CommandDto>();
 
   commandFormGroup: FormGroup = new FormGroup({
+    id: new FormControl<number>(+''),
+
     name: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(3)
@@ -48,13 +50,14 @@ export class ApiComponent implements OnInit {
     })
   }
 
-  deleteCommand(id: any){
+  deleteCommand(id: number){
     this.commandService.delete(id).subscribe(
       () => {this.array = this.array.filter( (aCommand) => aCommand.id != id)
       })
   }
 
   postCommand(){
+    if(!confirm(`api.component.ts:58 -> Did you run the JSON-SERVER ? if yes please comment this line`)) alert(`You should run the json-server  (read README file) ^^`);
     this.commandService.post(this.commandFormGroup.value)
     /*
       this.commandFormGroup.value is equivalent to:
@@ -73,14 +76,15 @@ export class ApiComponent implements OnInit {
 
   // make inputs empty
   clearInputs(){
-    this.commandFormGroup.reset;
-    // or
-    // this.commandFormGroup.get('name')?.setValue('');
-    // this.commandFormGroup.get('price')?.setValue('');
+    this.commandFormGroup.reset({
+      name: '',
+      price: +''
+    });
   }
 
   // edit commandService
   editCommand(eachCommand: CommandDto){
+    this.commandFormGroup.get('id')?.setValue(eachCommand.id);
     this.commandFormGroup.get('name')?.setValue(eachCommand.name);
     this.commandFormGroup.get('price')?.setValue(eachCommand.price);
     this.addOrPut=true;
