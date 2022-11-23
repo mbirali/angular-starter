@@ -49,8 +49,8 @@ Delete one command:
 `DELETE /commands/:id`
 
 ## Application
-The **api.component** 
-[![http://localhost:4200/api](adress "http://localhost:4200/api")](docs/api.component.png "http://localhost:4200/api")
-I used bootstrap:
+Ex: **api.component** (http://localhost:4200/api) :
+![api component](https://github.com/mohamedpierre/CRUD-ANGULAR/blob/main/docs/api.component.png?raw=true)
+
 
 Feel free to use it and change it that can suits your needs ^^
