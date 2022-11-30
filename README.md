@@ -4,9 +4,9 @@ Angular version 15.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Development server
 
-`git clone https://github.com/mohamedpierre/CRUD-ANGULAR.git`
+`git clone https://github.com/mohamedpierre/Angular-CRUD-JSON_SERVER.git`
 
-`cd CRUD-ANGULAR`
+`cd Angular-CRUD-JSON_SERVER`
 
 
 ### Json Server
