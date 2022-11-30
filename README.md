@@ -36,16 +36,16 @@ Base url: **http://localhost:42400/**
 Get all recipes:
 `GET /recipes`
 
-Get one command(search):
+Get one recipe(search):
 `GET /recipes/:id`
  
-Create one command:
+Create one recipe:
 `POST /recipes`
 
-Update one command:
+Update one recipe:
 `PUT /recipes/:id`
 
-Delete one command:
+Delete one recipe:
 `DELETE /recipes/:id`
 
 ## Application
