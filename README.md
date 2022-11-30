@@ -1,4 +1,4 @@
-# ANGULAR-CRUD
+# Angular-CRUD-JSON_SERVER
 
 Angular version 15.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
