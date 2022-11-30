@@ -1,6 +1,6 @@
 <div class="container w-50">
     <h1 class="text-center pb-4 ">add or update a recipe </h1>
-    <form  #isFormValid="ngForm" [formGroup]="commandFormGroup" class="form-group">
+    <form  #isFormValid="ngForm" [formGroup]="recipeFormGroup" class="form-group">
 
           <div class="mb-3">
             <!-- name -->
@@ -29,9 +29,9 @@
           <!-- create(add) or update(put) -->
           <div class="mb-3">
             <!-- create -->
-            <button *ngIf="!addOrPut" (click)="postCommand()" class="form-control btn btn-dark hvr" [disabled]="!isFormValid.valid">add</button>
+            <button *ngIf="!addOrPut" (click)="postRecipe()" class="form-control btn btn-dark hvr" [disabled]="!isFormValid.valid">add</button>
             <!-- update -->
-            <button *ngIf="addOrPut" (click)="putCommand()" class="form-control btn btn-warning hvr" [disabled]="!isFormValid.valid">update</button>
+            <button *ngIf="addOrPut" (click)="putRecipe()" class="form-control btn btn-warning hvr" [disabled]="!isFormValid.valid">update</button>
           </div>
     </form>
 
@@ -54,8 +54,8 @@
               <td scope="row">{{eachCmd.id}}</td>
               <td>{{eachCmd.name}}</td>
               <td>{{eachCmd.price}}</td>
-              <td><button (click)="editCommand(eachCmd)" class="btn btn-warning">update</button></td>
-              <td><button (click)="deleteCommand(eachCmd.id)" class="btn btn-danger">delete</button></td>
+              <td><button (click)="editRecipe(eachCmd)" class="btn btn-warning">update</button></td>
+              <td><button (click)="deleteRecipe(eachCmd.id)" class="btn btn-danger">delete</button></td>
           </tr>
 
       </tbody>

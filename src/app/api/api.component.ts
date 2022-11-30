@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommandDto } from '../models/interface';
-import { CommandService } from '../services/commandes.service';
+import { RecipeDto } from '../models/recipe.interface';
+import { RecipeService } from '../services/recipe.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
@@ -11,9 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 
 export class ApiComponent implements OnInit {
-  array: CommandDto[] = new Array<CommandDto>();
+  array: RecipeDto[] = new Array<RecipeDto>();
 
-  commandFormGroup: FormGroup = new FormGroup({
+  recipeFormGroup: FormGroup = new FormGroup({
     id: new FormControl<number>(+''),
 
     name: new FormControl<string>('', [
@@ -28,47 +28,47 @@ export class ApiComponent implements OnInit {
   });
 
   get name() {
-    return this.commandFormGroup.get('name');
+    return this.recipeFormGroup.get('name');
   }
 
   get price() {
-    return this.commandFormGroup.get('price');
+    return this.recipeFormGroup.get('price');
   }
 
   addOrPut = false;
 
-  constructor(private commandService:CommandService) { }
+  constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
-    this.getCommand();
+    this.getRecipe();
   }
 
-  getCommand() {
-    this.commandService.getAll()
-    .subscribe((data: CommandDto[]) =>{
+  getRecipe() {
+    this.recipeService.getAll()
+    .subscribe((data: RecipeDto[]) =>{
       this.array = data;
     })
   }
 
-  deleteCommand(id: number){
-    this.commandService.delete(id).subscribe(
-      () => {this.array = this.array.filter( (aCommand) => aCommand.id != id)
+  deleteRecipe(id: number){
+    this.recipeService.delete(id).subscribe(
+      () => {this.array = this.array.filter( (aRecipe) => aRecipe.id != id)
       })
   }
 
-  postCommand(){
+  postRecipe(){
     if(!confirm(`api.component.ts:58 -> Did you run the JSON-SERVER ? if yes please comment this line`)) alert(`You should run the json-server  (read README file) ^^`);
-    this.commandService.post(this.commandFormGroup.value)
+    this.recipeService.post(this.recipeFormGroup.value)
     /*
-      this.commandFormGroup.value is equivalent to:
+      this.recipeFormGroup.value is equivalent to:
       {
         name,
         price
       }
     */
     .subscribe(
-      (eachCommand: any)=>{
-          this.array = [eachCommand, ...this.array];
+      (eachRecipe: any)=>{
+          this.array = [eachRecipe, ...this.array];
           this.clearInputs();
     })
 
@@ -76,23 +76,23 @@ export class ApiComponent implements OnInit {
 
   // make inputs empty
   clearInputs(){
-    this.commandFormGroup.reset({
+    this.recipeFormGroup.reset({
       name: '',
       price: +''
     });
   }
 
-  // edit commandService
-  editCommand(eachCommand: CommandDto){
-    this.commandFormGroup.get('id')?.setValue(eachCommand.id);
-    this.commandFormGroup.get('name')?.setValue(eachCommand.name);
-    this.commandFormGroup.get('price')?.setValue(eachCommand.price);
+  // edit recipeService
+  editRecipe(eachRecipe: RecipeDto){
+    this.recipeFormGroup.get('id')?.setValue(eachRecipe.id);
+    this.recipeFormGroup.get('name')?.setValue(eachRecipe.name);
+    this.recipeFormGroup.get('price')?.setValue(eachRecipe.price);
     this.addOrPut=true;
   }
 
-  // update commandService
-  putCommand(){
-    this.commandService.updateCommand(this.commandFormGroup.value)
+  // update recipeService
+  putRecipe(){
+    this.recipeService.updateRecipe(this.recipeFormGroup.value)
     .subscribe( () => {
       this.clearInputs();
       this.addOrPut = false;

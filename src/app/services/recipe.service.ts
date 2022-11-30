@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { CommandDto } from '../models/interface';
+import { RecipeDto } from '../models/recipe.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommandService {
+export class RecipeService {
   urlApi= environment.api;
 
   constructor(private http:HttpClient) {   }
 
   // GET all
   getAll(){
-    return this.http.get<CommandDto[]>(this.urlApi);
+    return this.http.get<RecipeDto[]>(this.urlApi);
   }
 
   // DELETE one
@@ -22,18 +22,18 @@ export class CommandService {
   }
 
   // CREATE one
-  post(command: CommandDto){
-      return this.http.post<CommandDto>(this.urlApi, command);
+  post(recipe: RecipeDto){
+      return this.http.post<RecipeDto>(this.urlApi, recipe);
   }
 
   // UPDATE one
-  updateCommand(command: CommandDto){
-    return this.http.put(`${this.urlApi}/${command.id}`, command);
+  updateRecipe(recipe: RecipeDto){
+    return this.http.put(`${this.urlApi}/${recipe.id}`, recipe);
   }
 
   // search by id
   search(id: number){
-      return this.http.get<CommandDto>(`${this.urlApi}/${id}`); //${id}
+      return this.http.get<RecipeDto>(`${this.urlApi}/${id}`); //${id}
   }
 
 }
