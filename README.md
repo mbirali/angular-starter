@@ -11,17 +11,14 @@ Angular version 15.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
 ### Json Server
 
-***fakeDatabase.json*** : used to store recipes.
+`npm install -g json-server`
 
-to install the JSON Server globally run:
+run `npm run json-server` to start a json-server on port 42400.
+________________________
 
-`npm install -g json-server` 
+last command `npm run start` 
 
-and make sure to run it at: 
-
-`json-server --watch fakeDatabase.json --port 42400`
-
-Run `ng serve -o` for a dev server (-o to open the browser). The app will reload automatically if you change any of the source files.
+The app will reload automatically if you change any of the source files.
 
 ## Validations
 
