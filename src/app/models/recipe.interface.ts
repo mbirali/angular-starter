@@ -1,5 +1,5 @@
-export class RecipeDto {
-    id!: number;
-    name!: string;
-    price!: number;
+export interface Recipe {
+  id: number;
+  name: string;
+  price: number;
 }

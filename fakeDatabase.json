@@ -1,9 +1,9 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "name": "shawarma",
-      "price": "60"
+      "id": 0,
+      "name": "Hio",
+      "price": "12"
     }
   ]
 }
