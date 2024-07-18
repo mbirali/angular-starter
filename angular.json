@@ -3,21 +3,24 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "A1FirstProject": {
+    "edoTensei": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular:ng-new": {
+          "style": "scss"
         }
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "et",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/a1-first-project",
+            "outputPath": "dist/edoTensei",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -31,7 +34,7 @@
               }
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/font-awesome/css/font-awesome.min.css"
             ],
@@ -71,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "A1FirstProject:build:production"
+              "buildTarget": "edoTensei:build:production"
             },
             "development": {
-              "buildTarget": "A1FirstProject:build:development"
+              "buildTarget": "edoTensei:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "A1FirstProject:build"
+            "buildTarget": "edoTensei:build"
           }
         }
       }
