@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-burger',
+  selector: 'et-burger',
   templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.css']
+  standalone: true,
 })
 export class BurgerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'et-pizza',
-  templateUrl: './pizza.component.html',
+  selector: 'et-titre',
+  templateUrl: './title.component.html',
   standalone: true,
 })
-export class PizzaComponent implements OnInit {
+export class TitreComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

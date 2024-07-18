@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
+  selector: 'et-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  standalone: true,
+  imports: [FormsModule],
+  styles: `
+    .btn:hover{
+      background-color: rgb(54, 49, 43);
+    }
+    `,
 })
 export class RegisterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
