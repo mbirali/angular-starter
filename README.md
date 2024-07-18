@@ -1,22 +1,22 @@
 # Angular-CRUD-JSON_SERVER
 
-Angular version 15.0.0 [Angular CLI](https://github.com/angular/angular-cli)
+Angular version 18.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Development server
 
-`git clone https://github.com/mohamedpierre/angular-crud-json-server.git`
+`git clone https://github.com/mohamedbirali/angular-starter.git`
 
-`cd angular-crud-json-server`
-
+`cd angular-starter`
 
 ### Json Server
 
 `npm install -g json-server`
 
 run `npm run json-server` to start a json-server on port 42400.
-________________________
 
-last command `npm run start` 
+---
+
+last command `npm run start`
 
 The app will reload automatically if you change any of the source files.
 
@@ -35,7 +35,7 @@ Get all recipes:
 
 Get one recipe(search):
 `GET /recipes/:id`
- 
+
 Create one recipe:
 `POST /recipes`
 
@@ -46,8 +46,8 @@ Delete one recipe:
 `DELETE /recipes/:id`
 
 ## Application
-Ex: **api.component** (http://localhost:4200/api) :
-![api component](https://github.com/mohamedpierre/CRUD-ANGULAR/blob/main/docs/api.component.png?raw=true)
 
+Ex: **api.component** (http://localhost:4200/api) :
+![api component](https://github.com/mohamedbirali/Angular-starter/blob/main/docs/api.component.png?raw=true)
 
 Feel free to use it and change it that can suits your needs ^^

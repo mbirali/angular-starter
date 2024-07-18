@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../models/recipe.interface';
 import { RecipeService } from '../services/recipe.service';
-import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
-    selector: 'app-api',
-    templateUrl: './api.component.html',
-    styleUrls: ['./api.component.css'],
-    standalone: true,
-    imports: [
-    FormsModule,
-    ReactiveFormsModule
-],
+  selector: 'app-api',
+  templateUrl: './api.component.html',
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule],
+  styles: `
+  .hvr:hover{
+    background-color: rgb(173, 201, 192);
+    color:black;
+  }
+  `,
 })
 export class ApiComponent implements OnInit {
   array: Recipe[] = new Array<Recipe>();
@@ -20,12 +27,12 @@ export class ApiComponent implements OnInit {
   recipeFormGroup: FormGroup = new FormGroup({
     id: new FormControl<number>(+''),
 
-    name: new FormControl<string>('', [
+    name: new FormControl<string>('111', [
       Validators.required,
       Validators.minLength(3),
     ]),
 
-    price: new FormControl<number>(+'', [
+    price: new FormControl<number>(+'11', [
       Validators.required,
       Validators.pattern('[0-9]*'),
     ]),
@@ -60,25 +67,11 @@ export class ApiComponent implements OnInit {
   }
 
   postRecipe() {
-    if (
-      !confirm(
-        `${ApiComponent.name}#postRecipe \n Did you run the JSON-SERVER ? if yes please comment this line`
-      )
-    )
-      alert(`You should run the json-server  (check README file) ^^`);
-    this.recipeService
-      .post(this.recipeFormGroup.value)
-      /*
-      this.recipeFormGroup.value is equivalent to:
-      {
-        name,
-        price
-      }
-    */
-      .subscribe((eachRecipe: any) => {
-        this.array = [eachRecipe, ...this.array];
-        this.clearInputs();
-      });
+    const { name, price } = this.recipeFormGroup.value;
+    this.recipeService.post({ name, price }).subscribe((eachRecipe: Recipe) => {
+      this.array = [eachRecipe, ...this.array];
+      this.clearInputs();
+    });
   }
 
   // make inputs empty

@@ -1,40 +1,51 @@
 <div class="container w-50">
-  <h1 class="text-center pb-4 ">add or update a recipe </h1>
-  <form  #isFormValid="ngForm" [formGroup]="recipeFormGroup" class="form-group">
-
+  <h1 class="text-center pb-4">add or update a recipe</h1>
+  <form #isFormValid="ngForm" [formGroup]="recipeFormGroup" class="form-group">
     <div class="mb-3">
       <!-- name -->
       <label for="name" class="form-label">name</label>
-      <input type="text" class="form-control" name="name" formControlName="name" id="name" placeholder="name">
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        formControlName="name"
+        id="name"
+        placeholder="name"
+      />
 
       <!-- name errors -->
       @if (name?.touched && name?.invalid) {
-        <div>
-          @if (name?.errors?.['required']) {
-            <small class="text-danger">name is required</small>
-          }
-          @if (name?.errors?.['minlength']) {
-            <small class="text-danger">name is too short</small>
-          }
-        </div>
+      <div>
+        @if (name?.errors?.['required']) {
+        <small class="text-danger">name is required</small>
+        } @if (name?.errors?.['minlength']) {
+        <small class="text-danger">name is too short</small>
+        }
+      </div>
       }
     </div>
 
     <!-- price -->
     <div class="mb-3">
       <label for="price" class="form-label">price</label>
-      <input type="price" class="form-control" name="price" formControlName="price" id="price" placeholder="price">
+      <input
+        type="price"
+        class="form-control"
+        name="price"
+        formControlName="price"
+        id="price"
+        placeholder="price"
+      />
 
       <!-- price errors -->
       @if (price?.touched && price?.invalid) {
-        <div>
-          @if (price?.errors?.['required']) {
-            <small class="text-danger">price is required</small>
-          }
-          @if (price?.errors?.['pattern']) {
-            <small class="text-danger">price is invalid</small>
-          }
-        </div>
+      <div>
+        @if (price?.errors?.['required']) {
+        <small class="text-danger">price is required</small>
+        } @if (price?.errors?.['pattern']) {
+        <small class="text-danger">price is invalid</small>
+        }
+      </div>
       }
     </div>
 
@@ -42,46 +53,63 @@
     <div class="mb-3">
       <!-- create -->
       @if (!addOrPut) {
-        <button (click)="postRecipe()" class="form-control btn btn-dark hvr" [disabled]="!isFormValid.valid">add</button>
+      <button
+        (click)="postRecipe()"
+        class="form-control btn btn-dark hvr"
+        [disabled]="!isFormValid.valid"
+      >
+        add
+      </button>
       }
       <!-- update -->
       @if (addOrPut) {
-        <button (click)="putRecipe()" class="form-control btn btn-warning hvr" [disabled]="!isFormValid.valid">update</button>
+      <button
+        (click)="putRecipe()"
+        class="form-control btn btn-warning hvr"
+        [disabled]="!isFormValid.valid"
+      >
+        update
+      </button>
       }
     </div>
   </form>
 
   @if (array.length == 0) {
-    <div class="alert alert-warning text-center">Empty array</div>
+  <div class="alert alert-warning text-center">Empty array</div>
   }
 </div>
 
 @if (array.length != 0) {
-  <div class="container w-50">
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>#Id</th>
-          <th>Name</th>
-          <th>Price (MAD)</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (eachCmd of array; track eachCmd) {
-          <tr>
-            <td scope="row">{{eachCmd.id}}</td>
-            <td>{{eachCmd.name}}</td>
-            <td>{{eachCmd.price}}</td>
-            <td><button (click)="editRecipe(eachCmd)" class="btn btn-warning">update</button></td>
-            <td><button (click)="deleteRecipe(eachCmd.id)" class="btn btn-danger">delete</button></td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+<div class="container w-50">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>#Id</th>
+        <th>Name</th>
+        <th>Price (MAD)</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (eachCmd of array; track eachCmd) {
+      <tr>
+        <td scope="row">{{ eachCmd.id }}</td>
+        <td>{{ eachCmd.name }}</td>
+        <td>{{ eachCmd.price }}</td>
+        <td>
+          <button (click)="editRecipe(eachCmd)" class="btn btn-warning">
+            update
+          </button>
+        </td>
+        <td>
+          <button (click)="deleteRecipe(eachCmd.id)" class="btn btn-danger">
+            delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
 }
-
-
-

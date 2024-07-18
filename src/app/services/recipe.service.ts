@@ -23,6 +23,7 @@ export class RecipeService {
 
   // CREATE one
   post(recipe: Recipe) {
+    recipe.id = +Math.round(Math.random() * 100_00);
     return this.http.post<Recipe>(this.urlApi, recipe);
   }
 
