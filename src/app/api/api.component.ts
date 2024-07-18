@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../models/recipe.interface';
 import { RecipeService } from '../services/recipe.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-api',
-  templateUrl: './api.component.html',
-  styleUrls: ['./api.component.css'],
+    selector: 'app-api',
+    templateUrl: './api.component.html',
+    styleUrls: ['./api.component.css'],
+    standalone: true,
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        NgIf,
+        NgFor,
+    ],
 })
 export class ApiComponent implements OnInit {
   array: Recipe[] = new Array<Recipe>();
