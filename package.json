@@ -1,6 +1,6 @@
 {
-  "name": "a1-first-project",
-  "version": "0.0.0",
+  "name": "edo-tensei",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
