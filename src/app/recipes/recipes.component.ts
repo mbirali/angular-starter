@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../models/recipe.interface';
-import { RecipeService } from '../services/recipe.service';
+import { Recipe } from './recipe.type';
+import { RecipeService } from './recipes.service';
 import {
   FormGroup,
   FormControl,
@@ -11,7 +11,7 @@ import {
 
 @Component({
   selector: 'et-api',
-  templateUrl: './api.component.html',
+  templateUrl: './recipes.component.html',
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule],
   styles: `
