@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-api',
+  selector: 'et-api',
   templateUrl: './api.component.html',
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule],

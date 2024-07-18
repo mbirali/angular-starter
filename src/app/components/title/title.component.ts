@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-titre',
-  templateUrl: './titre.component.html',
+  selector: 'et-titre',
+  templateUrl: './title.component.html',
   standalone: true,
 })
 export class TitreComponent implements OnInit {

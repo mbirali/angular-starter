@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-burger',
+  selector: 'et-burger',
   templateUrl: './burger.component.html',
   standalone: true,
 })

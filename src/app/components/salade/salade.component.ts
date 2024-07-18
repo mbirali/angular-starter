@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-salade',
+  selector: 'et-salade',
   templateUrl: './salade.component.html',
   standalone: true,
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pizza',
+  selector: 'et-pizza',
   templateUrl: './pizza.component.html',
   standalone: true,
 })
