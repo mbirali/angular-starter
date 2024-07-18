@@ -1,4 +1,4 @@
-# Angular-CRUD-JSON_SERVER
+# Angular starter
 
 Angular version 18.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
@@ -48,6 +48,6 @@ Delete one recipe:
 ## Application
 
 Ex: **api.component** (http://localhost:4200/api) :
-![api component](https://github.com/mohamedbirali/Angular-starter/blob/main/docs/api.component.png?raw=true)
+![api component](https://github.com/mohamedbirali/angular-starter/blob/main/docs/api.component.png?raw=true)
 
 Feel free to use it and change it that can suits your needs ^^
