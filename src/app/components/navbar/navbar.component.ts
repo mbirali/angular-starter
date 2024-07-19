@@ -1,3 +1,4 @@
+import { TitleCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -5,10 +6,8 @@ import { RouterLink } from '@angular/router';
   selector: 'et-navbar',
   templateUrl: './navbar.component.html',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, TitleCasePipe],
 })
-export class NavbarComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class NavbarComponent {
+  navigations = ['burger', 'pizza', 'salade', 'login', 'register', 'recipes'];
 }
