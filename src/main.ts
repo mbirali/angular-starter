@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
-import { ApiComponent } from './app/recipes/recipes.component';
+import { RecipesComponent } from './app/recipes/recipes.component';
 import { RegisterComponent } from './app/contact/register/register.component';
 import { LoginComponent } from './app/contact/login/login.component';
 import { SaladeComponent } from './app/components/salade/salade.component';
@@ -33,7 +33,7 @@ bootstrapApplication(AppComponent, {
       { path: 'salade', component: SaladeComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: 'api', component: ApiComponent },
+      { path: 'recipes', component: RecipesComponent },
       // TODO: notFoundComponent
     ]),
   ],
