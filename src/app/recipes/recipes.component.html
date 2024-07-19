@@ -1,6 +1,6 @@
 <div class="container w-50">
-  <h1 class="text-center pb-4">add or update a recipe</h1>
-  <form #isFormValid="ngForm" [formGroup]="recipeFormGroup" class="form-group">
+  <h1 class="text-center pb-4">Manage Recipes Orders</h1>
+  <form [formGroup]="recipeForm" class="form-group">
     <div class="mb-3">
       <!-- name -->
       <label for="name" class="form-label">name</label>
@@ -52,35 +52,34 @@
     <!-- create(add) or update(put) -->
     <div class="mb-3">
       <!-- create -->
-      @if (!addOrPut) {
+      @if (isAdd) {
       <button
-        (click)="postRecipe()"
+        (click)="update()"
         class="form-control btn btn-dark hvr"
-        [disabled]="!isFormValid.valid"
+        [disabled]="!recipeForm.valid"
       >
-        add
+        Add
       </button>
       }
       <!-- update -->
-      @if (addOrPut) {
+      @else {
       <button
-        (click)="putRecipe()"
+        (click)="update()"
         class="form-control btn btn-warning hvr"
-        [disabled]="!isFormValid.valid"
+        [disabled]="!recipeForm.valid"
       >
-        update
+        Update
       </button>
       }
     </div>
   </form>
 
-  @if (array.length == 0) {
-  <div class="alert alert-warning text-center">Empty array</div>
-  }
-</div>
-
-@if (array.length != 0) {
-<div class="container w-50">
+  @if (recipes().length == 0) {
+  <div class="alert alert-warning text-center">Empty Array</div>
+  } @else {
+  <div class="alert alert-success text-center">
+    Total Price: {{ totalPrice() }}
+  </div>
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
@@ -92,18 +91,18 @@
       </tr>
     </thead>
     <tbody>
-      @for (eachCmd of array; track eachCmd) {
+      @for (recipe of recipes(); track recipe) {
       <tr>
-        <td scope="row">{{ eachCmd.id }}</td>
-        <td>{{ eachCmd.name }}</td>
-        <td>{{ eachCmd.price }}</td>
+        <td scope="row">{{ recipe.id }}</td>
+        <td>{{ recipe.name }}</td>
+        <td>{{ recipe.price }}</td>
         <td>
-          <button (click)="editRecipe(eachCmd)" class="btn btn-warning">
+          <button (click)="editRecipe(recipe)" class="btn btn-warning">
             update
           </button>
         </td>
         <td>
-          <button (click)="deleteRecipe(eachCmd.id)" class="btn btn-danger">
+          <button (click)="delete(recipe.id)" class="btn btn-danger">
             delete
           </button>
         </td>
@@ -111,5 +110,5 @@
       }
     </tbody>
   </table>
+  }
 </div>
-}

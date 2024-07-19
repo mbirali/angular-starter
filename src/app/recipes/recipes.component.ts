@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Recipe } from './recipe.type';
-import { RecipeService } from './recipes.service';
+import { Component, inject } from '@angular/core';
 import {
-  FormGroup,
   FormControl,
-  Validators,
+  FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
+import { Recipe } from './recipe.type';
+import { RecipeStateFacade } from './recipes.facade';
 
 @Component({
   selector: 'et-api',
   templateUrl: './recipes.component.html',
   standalone: true,
+  providers: [RecipeStateFacade],
   imports: [FormsModule, ReactiveFormsModule],
   styles: `
   .hvr:hover{
@@ -21,81 +22,60 @@ import {
   }
   `,
 })
-export class ApiComponent implements OnInit {
-  array: Recipe[] = new Array<Recipe>();
+export class RecipesComponent {
+  // di
+  #recipeStateFacade = inject(RecipeStateFacade);
 
-  recipeFormGroup: FormGroup = new FormGroup({
-    id: new FormControl<number>(+''),
+  //
+  recipes = this.#recipeStateFacade.recipesList;
+  totalPrice = this.#recipeStateFacade.totalPrice;
 
-    name: new FormControl<string>('111', [
+  //
+  recipeForm: FormGroup = new FormGroup({
+    id: new FormControl<number>(0),
+
+    name: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(3),
     ]),
 
-    price: new FormControl<number>(+'11', [
+    price: new FormControl<number>(1, [
       Validators.required,
       Validators.pattern('[0-9]*'),
     ]),
   });
+  //
+  isAdd = true;
 
   get name() {
-    return this.recipeFormGroup.get('name');
+    return this.recipeForm.get('name');
   }
 
   get price() {
-    return this.recipeFormGroup.get('price');
+    return this.recipeForm.get('price');
   }
 
-  addOrPut = false;
-
-  constructor(private recipeService: RecipeService) {}
-
-  ngOnInit(): void {
-    this.getRecipe();
+  delete(id: number) {
+    this.#recipeStateFacade.delete(id);
   }
 
-  getRecipe() {
-    this.recipeService.getAll().subscribe((data: Recipe[]) => {
-      this.array = data;
-    });
-  }
-
-  deleteRecipe(id: number) {
-    this.recipeService.delete(id).subscribe(() => {
-      this.array = this.array.filter((aRecipe) => aRecipe.id != id);
-    });
-  }
-
-  postRecipe() {
-    const { name, price } = this.recipeFormGroup.value;
-    this.recipeService.post({ name, price }).subscribe((eachRecipe: Recipe) => {
-      this.array = [eachRecipe, ...this.array];
-      this.clearInputs();
-    });
+  update() {
+    this.#recipeStateFacade.update(this.recipeForm.value);
+    this.clearInputs();
   }
 
   // make inputs empty
   clearInputs() {
-    this.recipeFormGroup.reset({
+    this.recipeForm.reset({
       name: '',
       price: +'',
     });
+    this.isAdd = true;
   }
 
   // edit recipeService
   editRecipe(eachRecipe: Recipe) {
-    this.recipeFormGroup.patchValue(eachRecipe);
-    this.addOrPut = true;
-  }
-
-  // update recipeService
-  putRecipe() {
-    this.recipeService
-      .updateRecipe(this.recipeFormGroup.value)
-      .subscribe(() => {
-        this.clearInputs();
-        this.getRecipe();
-        this.addOrPut = false;
-      });
+    this.recipeForm.patchValue(eachRecipe);
+    this.isAdd = false;
   }
 }
