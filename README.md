@@ -1,4 +1,4 @@
-# Angular starter
+# Angular Starter
 
 Angular version 18.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
@@ -18,9 +18,6 @@ The app will reload automatically if you change any of the source files.
 
 The only component that contains form validations is **recipes.component**
 
-## Application
-
-Ex: **Recipes.component** (http://localhost:4200/recipes) :
-![recipes component](https://github.com/mohamedbirali/angular-starter/blob/main/docs/recipes.component.png?raw=true)
+## Contribution
 
 Feel free to use it and change it that can suits your needs ^^
