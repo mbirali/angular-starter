@@ -17,6 +17,7 @@ import {
   provideHttpClient,
 } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 if (environment.production) {
   enableProdMode();
@@ -35,6 +36,6 @@ bootstrapApplication(AppComponent, {
       { path: 'register', component: RegisterComponent },
       { path: 'recipes', component: RecipesComponent },
       // TODO: notFoundComponent
-    ]),
+    ]), provideAnimationsAsync(),
   ],
 }).catch((err) => console.error(err));
