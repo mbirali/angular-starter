@@ -4,6 +4,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { LowerCasePipe, TitleCasePipe } from '@angular/common';
+import { MatDivider } from '@angular/material/divider';
 @Component({
   selector: 'et-main',
   standalone: true,
@@ -17,6 +18,7 @@ import { LowerCasePipe, TitleCasePipe } from '@angular/common';
     TitleCasePipe,
     LowerCasePipe,
     // mat
+    MatDivider,
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
@@ -24,5 +26,7 @@ import { LowerCasePipe, TitleCasePipe } from '@angular/common';
 })
 export class LayoutMainComponent {
   navigations = ['login', 'register', 'recipes'];
+  authNav = ['login', 'register'];
+  manageNav = ['recipes'];
   isOpen = true;
 }
