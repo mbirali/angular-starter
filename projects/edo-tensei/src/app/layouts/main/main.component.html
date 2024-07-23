@@ -3,26 +3,22 @@
     <mat-nav-list class="border-r h-full p-4">
       <div class="font-semibold" mat-subheader>Auth</div>
       @for (link of authNav; track link) {
-      <mat-list-item>
-        <a
-          matListItemTitle
-          [routerLink]="link | lowercase"
-          [activated]="link.isActive"
-          >{{ link | titlecase }}</a
-        >
-      </mat-list-item>
+      <a
+        mat-list-item
+        [routerLink]="link | lowercase"
+        [activated]="link.isActive"
+        >{{ link | titlecase }}</a
+      >
       }
       <mat-divider class="mt-2"></mat-divider>
       <div class="font-semibold" mat-subheader>Management</div>
       @for (link of manageNav; track link) {
-      <mat-list-item>
-        <a
-          matListItemTitle
-          [routerLink]="link | lowercase"
-          [activated]="link.isActive"
-          >{{ link | titlecase }}</a
-        >
-      </mat-list-item>
+      <a
+        mat-list-item
+        [routerLink]="link | lowercase"
+        [activated]="link.isActive"
+        >{{ link | titlecase }}</a
+      >
       }
     </mat-nav-list>
   </mat-drawer>
