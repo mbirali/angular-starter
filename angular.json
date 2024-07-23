@@ -52,6 +52,11 @@
               {
                 "glob": "**/*",
                 "input": "projects/edo-tensei/public"
+              },
+              {
+                "glob": "_redirects",
+                "input": "projects/edo-tensei/public",
+                "output": "/"
               }
             ],
             "styles": [
