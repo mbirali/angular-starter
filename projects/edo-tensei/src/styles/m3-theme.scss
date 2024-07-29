@@ -310,7 +310,8 @@ $angular-material-3-theme-dark: mat.define-theme((color: (theme-type: dark,
 
 html,
 body {
-  margin: 0;
+  margin: 0 !important;
+  height: 100% !important;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   @include mat.system-level-colors($angular-material-3-theme);
   @include mat.system-level-typography($angular-material-3-theme);

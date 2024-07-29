@@ -1,18 +1,11 @@
 <div class="container w-100">
-  <div class="d-flex flex-column">
-    <div class="theme-controls">
-      <div class="color-picker-wrapper">
-        <div class="color-picker-overflow">
-          <input
-            matInput
-            id="color-input"
-            type="color"
-            [(ngModel)]="color"
-            (ngModelChange)="onColorChange($event)"
-          />
-        </div>
-      </div>
-    </div>
+  <div class="flex flex-col space-y-4">
+    <input
+      matInput
+      type="color"
+      [(ngModel)]="color"
+      (ngModelChange)="onColorChange($event)"
+    />
 
     <div>
       <h2>Buttons</h2>
@@ -201,7 +194,7 @@
       </section>
     </div>
 
-    <div class="spacing">
+    <div class="flex flex-row space-x-4">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>Shiba Inu</mat-card-title>
@@ -222,7 +215,7 @@
       </mat-card>
     </div>
 
-    <div class="spacing">
+    <div class="flex flex-row space-x-4">
       <mat-form-field>
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepicker]="picker" />
@@ -235,7 +228,7 @@
       </mat-form-field>
     </div>
 
-    <div class="spacing">
+    <div class="flex flex-row space-x-4">
       <section class="example-section">
         <mat-checkbox class="example-margin">Check me!</mat-checkbox>
         <mat-checkbox class="example-margin" [disabled]="true"
@@ -244,7 +237,7 @@
       </section>
     </div>
 
-    <div class="spacing">
+    <div class="flex flex-row space-x-4">
       <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
       <mat-menu #animals="matMenu">
         <button mat-menu-item [matMenuTriggerFor]="vertebrates">
