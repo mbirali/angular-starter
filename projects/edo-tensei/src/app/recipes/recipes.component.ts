@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -10,15 +10,19 @@ import { Recipe } from './recipe.type';
 import { RecipeStateFacade } from './recipes.facade';
 
 @Component({
-  selector: 'et-api',
+  selector: 'et-recipes',
   templateUrl: './recipes.component.html',
   standalone: true,
   providers: [RecipeStateFacade],
+  encapsulation: ViewEncapsulation.None,
   imports: [FormsModule, ReactiveFormsModule],
   styles: `
   .hvr:hover{
     background-color: rgb(173, 201, 192);
     color:black;
+  }
+  et-recipes {
+    @apply h-full;
   }
   `,
 })

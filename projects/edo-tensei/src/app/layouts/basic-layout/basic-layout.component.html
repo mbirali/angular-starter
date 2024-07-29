@@ -9,7 +9,9 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list class="flex-col justify-between">
-      <a mat-list-item [routerLink]="'recipes' | lowercase">Recipes</a>
+      @for (nav of navs; track $index) {
+      <a mat-list-item [routerLink]="nav | lowercase">{{ nav | titlecase }}</a>
+      }
       <a mat-list-item [routerLink]="'' | lowercase">Logout</a>
     </mat-nav-list>
   </mat-sidenav>

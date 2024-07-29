@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AsyncPipe, LowerCasePipe } from '@angular/common';
+import { AsyncPipe, LowerCasePipe, TitleCasePipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -19,6 +19,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     RouterOutlet,
     RouterLink,
     LowerCasePipe,
+    TitleCasePipe,
     // mat
     MatToolbarModule,
     MatButtonModule,
@@ -29,7 +30,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   ],
 })
 export class BasicLayoutComponent {
-  readonly navs = [];
+  readonly navs = ['recipes', 'theme'];
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver

@@ -1,0 +1,302 @@
+<div class="container w-100">
+  <div class="d-flex flex-column">
+    <div class="theme-controls">
+      <div class="color-picker-wrapper">
+        <div class="color-picker-overflow">
+          <input
+            matInput
+            id="color-input"
+            type="color"
+            [(ngModel)]="color"
+            (ngModelChange)="onColorChange($event)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Buttons</h2>
+      <section>
+        <div class="example-label">Basic</div>
+        <div class="example-button-row">
+          <button mat-button>Basic</button>
+          <button mat-button color="primary">Primary</button>
+          <button mat-button color="accent">Accent</button>
+          <button mat-button color="warn">Warn</button>
+          <button mat-button disabled>Disabled</button>
+          <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-label">Raised</div>
+        <div class="example-button-row">
+          <button mat-raised-button>Basic</button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">Accent</button>
+          <button mat-raised-button color="warn">Warn</button>
+          <button mat-raised-button disabled>Disabled</button>
+          <a mat-raised-button href="https://www.google.com/" target="_blank"
+            >Link</a
+          >
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-label">Stroked</div>
+        <div class="example-button-row">
+          <button mat-stroked-button>Basic</button>
+          <button mat-stroked-button color="primary">Primary</button>
+          <button mat-stroked-button color="accent">Accent</button>
+          <button mat-stroked-button color="warn">Warn</button>
+          <button mat-stroked-button disabled>Disabled</button>
+          <a mat-stroked-button href="https://www.google.com/" target="_blank"
+            >Link</a
+          >
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-label">Flat</div>
+        <div class="example-button-row">
+          <button mat-flat-button>Basic</button>
+          <button mat-flat-button color="primary">Primary</button>
+          <button mat-flat-button color="accent">Accent</button>
+          <button mat-flat-button color="warn">Warn</button>
+          <button mat-flat-button disabled>Disabled</button>
+          <a mat-flat-button href="https://www.google.com/" target="_blank"
+            >Link</a
+          >
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-label">Icon</div>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <button
+              mat-icon-button
+              aria-label="Example icon button with a vertical three dot icon"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="primary"
+              aria-label="Example icon button with a home icon"
+            >
+              <mat-icon>home</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="accent"
+              aria-label="Example icon button with a menu icon"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="warn"
+              aria-label="Example icon button with a heart icon"
+            >
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              disabled
+              aria-label="Example icon button with a open in new tab icon"
+            >
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-label">FAB</div>
+        <div class="example-button-row">
+          <div class="example-flex-container d-flex">
+            <div class="example-button-container">
+              <button
+                mat-fab
+                color="primary"
+                aria-label="Example icon button with a delete icon"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button
+                mat-fab
+                color="accent"
+                aria-label="Example icon button with a bookmark icon"
+              >
+                <mat-icon>bookmark</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button
+                mat-fab
+                color="warn"
+                aria-label="Example icon button with a home icon"
+              >
+                <mat-icon>home</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button
+                mat-fab
+                disabled
+                aria-label="Example icon button with a heart icon"
+              >
+                <mat-icon>favorite</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-label">Mini FAB</div>
+        <div class="example-button-row">
+          <div class="example-flex-container d-flex">
+            <div class="example-button-container">
+              <button
+                mat-mini-fab
+                color="primary"
+                aria-label="Example icon button with a menu icon"
+              >
+                <mat-icon>menu</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button
+                mat-mini-fab
+                color="accent"
+                aria-label="Example icon button with a plus one icon"
+              >
+                <mat-icon>plus_one</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button
+                mat-mini-fab
+                color="warn"
+                aria-label="Example icon button with a filter list icon"
+              >
+                <mat-icon>filter_list</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button
+                mat-mini-fab
+                disabled
+                aria-label="Example icon button with a home icon"
+              >
+                <mat-icon>home</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="spacing">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>This card indeterminates progress bar.</p>
+          <p>
+            {{
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, enim"
+            }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="spacing">
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="spacing">
+      <section class="example-section">
+        <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+        <mat-checkbox class="example-margin" [disabled]="true"
+          >Disabled</mat-checkbox
+        >
+      </section>
+    </div>
+
+    <div class="spacing">
+      <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+      <mat-menu #animals="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="vertebrates">
+          Vertebrates
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="invertebrates">
+          Invertebrates
+        </button>
+      </mat-menu>
+
+      <mat-menu #vertebrates="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+        <button mat-menu-item [matMenuTriggerFor]="amphibians">
+          Amphibians
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+        <button mat-menu-item>Birds</button>
+        <button mat-menu-item>Mammals</button>
+      </mat-menu>
+
+      <mat-menu #invertebrates="matMenu">
+        <button mat-menu-item>Insects</button>
+        <button mat-menu-item>Molluscs</button>
+        <button mat-menu-item>Crustaceans</button>
+        <button mat-menu-item>Corals</button>
+        <button mat-menu-item>Arachnids</button>
+        <button mat-menu-item>Velvet worms</button>
+        <button mat-menu-item>Horseshoe crabs</button>
+      </mat-menu>
+
+      <mat-menu #fish="matMenu">
+        <button mat-menu-item>Baikal oilfish</button>
+        <button mat-menu-item>Bala shark</button>
+        <button mat-menu-item>Ballan wrasse</button>
+        <button mat-menu-item>Bamboo shark</button>
+        <button mat-menu-item>Banded killifish</button>
+      </mat-menu>
+
+      <mat-menu #amphibians="matMenu">
+        <button mat-menu-item>Sonoran desert toad</button>
+        <button mat-menu-item>Western toad</button>
+        <button mat-menu-item>Arroyo toad</button>
+        <button mat-menu-item>Yosemite toad</button>
+      </mat-menu>
+
+      <mat-menu #reptiles="matMenu">
+        <button mat-menu-item>Banded Day Gecko</button>
+        <button mat-menu-item>Banded Gila Monster</button>
+        <button mat-menu-item>Black Tree Monitor</button>
+        <button mat-menu-item>Blue Spiny Lizard</button>
+        <button mat-menu-item disabled>Velociraptor</button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

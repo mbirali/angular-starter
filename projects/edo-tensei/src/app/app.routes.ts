@@ -3,6 +3,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { BasicLayoutComponent } from './layouts/basic-layout/basic-layout.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { ThemeComponent } from './theme/theme.component';
 
 export default [
   {
@@ -15,7 +16,10 @@ export default [
   {
     path: '',
     component: BasicLayoutComponent,
-    children: [{ path: 'recipes', component: RecipesComponent }],
+    children: [
+      { path: 'recipes', component: RecipesComponent },
+      { path: 'theme', component: ThemeComponent },
+    ],
   },
 
   // TODO: notFoundComponent
