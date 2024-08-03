@@ -60,7 +60,12 @@
             "styles": [
               "projects/ngs/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "projects/ngs/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/ngs/server.ts"
+            }
           },
           "configurations": {
             "production": {
