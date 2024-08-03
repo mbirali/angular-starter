@@ -113,10 +113,12 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "changeDetection": "OnPush",
           "inlineTemplate": true,
           "inlineStyle": true,
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "viewEncapsulation": "None"
         },
         "@schematics/angular:class": {
           "skipTests": true
