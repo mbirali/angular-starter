@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'ngs-root',
+  selector: 'ans-root',
   standalone: true,
   imports: [RouterOutlet],
   template: `
@@ -13,5 +13,5 @@ import { RouterOutlet } from '@angular/router';
   styles: [],
 })
 export class AppComponent {
-  title = 'angular-starter';
+  title = 'ngs';
 }

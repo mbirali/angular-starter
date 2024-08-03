@@ -3,10 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --project=edoTensei",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "json-server": "json-server --watch fakeDatabase.json --port 42400"
+    "start": "ng serve -o --project=ngs",
+    "build": "ng build --project=ngs",
+    "watch": "ng build --project=ngs --watch --configuration development"
   },
   "private": true,
   "dependencies": {
