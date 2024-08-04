@@ -4,7 +4,7 @@ Angular version 18.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Development server
 
-`git clone https://github.com/mohamedbirali/angular-starter.git`
+`git clone https://github.com/mbirali/angular-starter.git`
 
 `cd angular-starter`
 
