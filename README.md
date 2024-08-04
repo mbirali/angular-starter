@@ -14,13 +14,15 @@ last command `npm run start`
 
 The app will reload automatically if you change any of the source files.
 
-## Validations
+## Todos
 
-The only component that contains form validations is **recipes.component**
+- [ ] Angularfire Auth.
+- [ ] Update README.
 
 ## Contribution
 
 Feel free to use it and change it that can suits your needs ^^
 
 ### Support
+
 <a href="https://www.buymeacoffee.com/mbirali"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=mbirali&button_colour=40DCA5&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
