@@ -1,13 +1,23 @@
 {
   "name": "ngs",
   "version": "0.0.1",
+  "author": {
+    "email": "mohamed.birali@outlook.com",
+    "name": "Mohamed Birali",
+    "url": "https://mbirali.netlify.app"
+  },
+  "description": "Headless Angular Starter: All the boilerplate you need to start your MVP, learn Angular or copy-paste standalone components.",
+  "license": "MIT",
+  "sponsor": {
+    "url": "https://www.buymeacoffee.com/mbirali"
+  },
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --project=ngs",
     "build": "ng build --project=ngs",
     "serve:ssr:ngs": "node dist/ngs/server/server.mjs"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "18.0.1",
     "@angular/cdk": "18.1.1",
