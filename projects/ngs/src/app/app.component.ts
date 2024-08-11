@@ -1,8 +1,10 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    signal,
     ViewEncapsulation,
 } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,14 +12,15 @@ import { RouterOutlet } from '@angular/router';
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
-    imports: [RouterOutlet],
+    imports: [RouterOutlet, MatIcon],
     template: `
-        <h1 class="font-bold">Welcome to {{ title }}!</h1>
-
+        <h1 class="text-center font-bold">Welcome to {{ title() }}!</h1>
         <router-outlet />
     `,
     styles: [],
 })
 export class AppComponent {
-    title = 'ngs';
+    title = signal('Angular Starter');
+    // or
+    //  title = 'Angular Starter';
 }
