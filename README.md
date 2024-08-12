@@ -14,10 +14,14 @@ last command `npm run start`
 
 The app will reload automatically if you change any of the source files.
 
-## Todos
+## What's included
 
-- [ ] Angularfire Auth.
-- [ ] Update README.
+-   [x] Minimalist configuration.
+-   [x] Angular Material.
+-   [x] TailwindCss.
+-   [x] Firebase with 2 projects configs (to separate dev and prod environments).
+-   [x] SSR.
+-   [x] Custom schematics.
 
 ## Contribution
 
