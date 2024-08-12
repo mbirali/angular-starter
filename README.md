@@ -16,7 +16,7 @@ The app will reload automatically if you change any of the source files.
 
 ## What's included
 
--   [x] Minimalist configuration.
+-   [x] Minimal configuration.
 -   [x] Angular Material.
 -   [x] TailwindCss.
 -   [x] Firebase with 2 projects configs (to separate dev and prod environments).
