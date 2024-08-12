@@ -38,7 +38,7 @@
       },
       "root": "projects/ngs",
       "sourceRoot": "projects/ngs/src",
-      "prefix": "ans",
+      "prefix": "ngs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -80,6 +80,12 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
                   "maximumError": "4kB"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngs/src/env/dev.env.ts",
+                  "with": "projects/ngs/src/env/prod.env.ts"
                 }
               ],
               "outputHashing": "all"

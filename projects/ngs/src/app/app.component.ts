@@ -8,7 +8,7 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'ans-root',
+    selector: 'ngs-root',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
