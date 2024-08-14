@@ -8,11 +8,9 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
-    PreloadAllModules,
     provideRouter,
     withComponentInputBinding,
     withInMemoryScrolling,
-    withPreloading,
     withViewTransitions,
 } from '@angular/router';
 import { firebaseConfig } from '../env/dev.env';
@@ -23,7 +21,6 @@ export const appConfig: ApplicationConfig = {
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(
             routes,
-            withPreloading(PreloadAllModules),
             withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
             withComponentInputBinding(),
             withViewTransitions()
