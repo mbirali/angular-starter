@@ -14,9 +14,8 @@
   "private": false,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --project=ngs",
-    "build": "ng build --project=ngs",
-    "serve:ssr:ngs": "node dist/ngs/server/server.mjs"
+    "start": "ng serve -o --project=ngs --ssl --port=4200",
+    "build": "ng build --project=ngs"
   },
   "dependencies": {
     "@angular/animations": "18.0.1",
