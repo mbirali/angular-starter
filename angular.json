@@ -61,12 +61,7 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "projects/ngs/src/styles.scss"
             ],
-            "scripts": [],
-            "server": "projects/ngs/src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "projects/ngs/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
