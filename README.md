@@ -8,6 +8,8 @@ Angular version 18.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 
 `cd angular-starter`
 
+`npm install`
+
 ---
 
 last command `npm run start`
