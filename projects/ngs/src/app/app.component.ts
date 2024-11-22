@@ -9,7 +9,6 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'ngs-root',
-    standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     imports: [RouterOutlet, MatIcon],
@@ -17,7 +16,7 @@ import { RouterOutlet } from '@angular/router';
         <h1 class="text-center font-bold">Welcome to {{ title() }}!</h1>
         <router-outlet />
     `,
-    styles: [],
+    styles: []
 })
 export class AppComponent {
     title = signal('Angular Starter');
