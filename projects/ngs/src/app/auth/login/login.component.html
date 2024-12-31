@@ -1,0 +1,129 @@
+<div class="flex w-full justify-center p-3">
+    <!-- card -->
+    <mat-card
+        [appearance]="'outlined'"
+        class="w-full rounded-lg p-4 md:w-1/2 lg:w-1/3"
+    >
+        <!-- logo -->
+        <ngs-logo />
+
+        <!-- title -->
+        <div class="mt-4 text-xl font-bold">Login</div>
+
+        <!-- OAuth 2 -->
+        <div class="mt-8 grid grid-cols-2 gap-4">
+            <!-- google -->
+            <button
+                [disabled]="isSpin()"
+                mat-flat-button
+                [color]="'primary'"
+                (click)="loginGoogle()"
+            >
+                Google
+            </button>
+            <!-- github -->
+            <button
+                [disabled]="isSpin()"
+                mat-flat-button
+                class="cursor-pointer"
+                (click)="loginGithub()"
+            >
+                Github
+            </button>
+        </div>
+
+        <mat-divider class="mb-8 mt-4 px-20" />
+
+        <!-- form -->
+        <form
+            [formGroup]="loginForm"
+            class="flex flex-col justify-center space-y-1"
+        >
+            <!-- email -->
+            <mat-form-field [appearance]="'outline'">
+                <mat-label>Email</mat-label>
+                <mat-icon matPrefix [fontIcon]="'person'" />
+                <input
+                    type="email"
+                    matInput
+                    [formControlName]="loginProps.EMAIL"
+                    placeholder="example@mail.io"
+                />
+                <mat-error>
+                    {{
+                        getError(
+                            loginForm.get(loginProps.EMAIL),
+                            loginProps.EMAIL
+                        )
+                    }}
+                </mat-error>
+            </mat-form-field>
+
+            <!-- password -->
+            <mat-form-field [appearance]="'outline'">
+                <mat-label>Password</mat-label>
+                <mat-icon matPrefix [fontIcon]="'lock'" />
+                <input
+                    type="password"
+                    matInput
+                    [formControlName]="loginProps.PASSWORD"
+                    placeholder="Password"
+                    [autocomplete]="true"
+                    #passwordField
+                />
+                <button
+                    mat-icon-button
+                    type="button"
+                    (click)="
+                        passwordField.type === 'password'
+                            ? (passwordField.type = 'text')
+                            : (passwordField.type = 'password')
+                    "
+                    matSuffix
+                >
+                    @if (passwordField.type === 'password') {
+                        <mat-icon [fontIcon]="'visibility'" />
+                    }
+                    @if (passwordField.type === 'text') {
+                        <mat-icon [fontIcon]="'visibility_off'" />
+                    }
+                </button>
+                <mat-error>
+                    {{
+                        getError(
+                            loginForm.get(loginProps.PASSWORD),
+                            loginProps.PASSWORD
+                        )
+                    }}
+                </mat-error>
+            </mat-form-field>
+
+            <!-- redirects  -->
+            <div class="flex flex-row justify-between">
+                <button mat-button [routerLink]="['../..', 'auth', 'register']">
+                    Register
+                </button>
+                <button
+                    mat-button
+                    [routerLink]="['../..', 'auth', 'forgot-password']"
+                >
+                    Forgot Password ?
+                </button>
+            </div>
+        </form>
+
+        <!-- submit -->
+        <button
+            class="mt-4"
+            [disabled]="isFormDisabled"
+            mat-flat-button
+            (click)="loginEmail()"
+        >
+            @if (isSpin()) {
+                <mat-progress-spinner [mode]="'indeterminate'" diameter="30" />
+            } @else {
+                Login
+            }
+        </button>
+    </mat-card>
+</div>
