@@ -39,7 +39,7 @@
     "zone.js": "0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^19.0.1",
+    "@angular/build": "19.0.1",
     "@angular/cli": "19.0.1",
     "@angular/compiler-cli": "19.0.0",
     "@types/express": "4.17.17",
@@ -52,5 +52,15 @@
     "prettier-plugin-tailwindcss": "0.6.1",
     "tailwindcss": "3.4.6",
     "typescript": "5.5"
-  }
+  },
+  "keywords": [
+    "Angular",
+    "Angular Material",
+    "Firebase",
+    "Angularfire",
+    "TailwindCss",
+    "Security",
+    "Firestore",
+    "Reactive Forms"
+  ]
 }

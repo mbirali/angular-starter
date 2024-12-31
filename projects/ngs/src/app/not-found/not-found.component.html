@@ -1,0 +1,24 @@
+<div class="flex w-full justify-center p-3">
+    <!-- card -->
+    <mat-card
+        [appearance]="'outlined'"
+        class="w-full rounded-lg p-4 md:w-1/2 lg:w-1/3"
+    >
+        <!-- logo -->
+        <ngs-logo />
+
+        <!-- title -->
+        <div class="mb-8 mt-4 text-xl font-bold">Page Not Found (404)</div>
+
+        <!-- Info -->
+        <section class="flex flex-col justify-center">
+            <!-- email -->
+            <p>There is no page for that specific route.</p>
+
+            <!-- redirects  -->
+            <div class="flex flex-row justify-end">
+                <button mat-button [routerLink]="['/']">Back</button>
+            </div>
+        </section>
+    </mat-card>
+</div>
