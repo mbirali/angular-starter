@@ -47,6 +47,7 @@ export class AuthService {
             const profile = getAdditionalUserInfo(user);
             // save only new users to firestore
             if (profile.isNewUser)
+                // best practice is to use cloud function (ex: send welcome email)
                 await this.#saveUser(user.user, profile.profile);
 
             this.#redirect('domain');
@@ -66,6 +67,7 @@ export class AuthService {
             const profile = getAdditionalUserInfo(user);
             // save only new users to firestore
             if (profile.isNewUser)
+                // best practice is to use cloud function (ex: send welcome email)
                 await this.#saveUser(user.user, profile.profile);
 
             this.#redirect('domain');
