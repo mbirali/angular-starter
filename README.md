@@ -1,6 +1,10 @@
 # Angular Starter
 
 Angular version 19.0.0 [Angular CLI](https://github.com/angular/angular-cli)
+![open_source](https://github.com/user-attachments/assets/968faa16-7381-4ed0-b7b2-226edaf742a7)
+
+
+
 
 ## Todo
 
