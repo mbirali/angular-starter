@@ -5,7 +5,7 @@
 @tailwind base;
 
 html {
-  color-scheme: dark;
+  color-scheme: light dark;
   @include mat.theme((color: mat.$violet-palette,
       typography: Roboto,
       density: 0));
