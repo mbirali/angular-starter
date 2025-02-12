@@ -9,8 +9,10 @@ Angular version 19.0.0 [Angular CLI](https://github.com/angular/angular-cli)
 ## Todo
 
 -   [x] Auth (see [video](https://youtu.be/EW-nyOwHALo?si=RhoUjMcC91GStdKS))
+-   [ ] Multiple Themes
 -   [ ] Navigation
--   [ ] CRUD
+-   [ ] Dashboard
+-   [ ] Table CRUD automation
 
 ## Development server
 
