@@ -1,5 +1,7 @@
 Contributing
+
 Reporting Bugs
+
 When submitting a new bug report, please first search for an existing or similar report & then use one of our existing issue templates if you believe you've come across a unique problem. Duplicate issues, or issues that don't use one of our templates may get closed without a response.
 
 Development
@@ -8,7 +10,7 @@ Development
 $ git clone git@github.com:mbirali/angular-starter.git
 2. Navigate into project & install development-specific dependencies...
 
-$ cd ./oclif && yarn
+$ cd .\angular-starter && yarn
 3. Write some code &/or add some tests...
 
 ...
