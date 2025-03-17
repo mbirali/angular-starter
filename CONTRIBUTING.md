@@ -16,8 +16,8 @@ $ cd .\angular-starter && yarn
 ...
 4. Run tests & ensure they pass...
 
-$ yarn test
-5. Open a Pull Request for your work & become the newest contributor to oclif! 🎉
+$ npm run test
+5. Open a Pull Request for your work & become the newest contributor! 🎉
 
 Pull Request Conventions
 We use Conventional Commits. When opening a pull request, please be sure that either the pull request title, or each commit in the pull request, has one of the following prefixes:
