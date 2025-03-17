@@ -7,7 +7,9 @@ When submitting a new bug report, please first search for an existing or similar
 Development
 1. Clone this repository...
 
-$ git clone git@github.com:mbirali/angular-starter.git
+```
+git clone git@github.com:mbirali/angular-starter.git
+```
 2. Navigate into project & install development-specific dependencies...
 
 ```
