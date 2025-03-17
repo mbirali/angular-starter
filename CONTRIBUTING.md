@@ -10,7 +10,13 @@ Development
 $ git clone git@github.com:mbirali/angular-starter.git
 2. Navigate into project & install development-specific dependencies...
 
-$ cd .\angular-starter && yarn
+```
+cd angular-starter
+```
+```
+npm install
+```
+
 3. Write some code &/or add some tests...
 
 ...
