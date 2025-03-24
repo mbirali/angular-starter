@@ -4,8 +4,8 @@ import {
     redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
 import { Routes } from '@angular/router';
-import { BasicLayoutComponent } from './layouts/basic/basic.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+
+
 
 export const NGS_TITLE_SUFFIX = ' | NGS';
 
@@ -21,7 +21,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: BasicLayoutComponent,
+        loadComponent: () => import('./layouts/basic/basic.component').then(m => m.BasicLayoutComponent),
         children: [
             {
                 path: 'auth',
@@ -36,7 +36,7 @@ export const routes: Routes = [
             },
             {
                 path: '**',
-                component: NotFoundComponent,
+                loadComponent: () => import('./not-found/not-found.component').then(m => m.NotFoundComponent),
             },
         ],
     },
