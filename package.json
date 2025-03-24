@@ -30,7 +30,7 @@
     "@angular/platform-browser-dynamic": "19.2.3",
     "@angular/platform-server": "19.2.3",
     "@angular/router": "19.2.3",
-    "@angular/ssr": "19.2.3",
+    "@angular/ssr": "19.2.4",
     "@material/material-color-utilities": "0.3.0",
     "express": "4.21.2",
     "ngs": "file:",
@@ -40,8 +40,8 @@
     "zone.js": "0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "19.2.3",
-    "@angular/cli": "19.2.3",
+    "@angular/build": "19.2.4",
+    "@angular/cli": "19.2.4",
     "@angular/compiler-cli": "19.2.3",
     "@types/express": "4.17.17",
     "@types/node": "18.18.0",
