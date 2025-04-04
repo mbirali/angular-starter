@@ -114,7 +114,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
+          "inlineTemplate": false,
           "inlineStyle": true,
           "style": "scss",
           "skipTests": true
@@ -143,7 +143,7 @@
       },
       "root": "projects/auto-crud",
       "sourceRoot": "projects/auto-crud/src",
-      "prefix": "app",
+      "prefix": "ac",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -163,6 +163,7 @@
               }
             ],
             "styles": [
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/auto-crud/src/styles.scss"
             ],
             "scripts": []
