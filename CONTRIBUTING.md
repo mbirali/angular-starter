@@ -37,7 +37,7 @@ $ npm run test
 
 ## Pull Request Conventions
 
-We use Conventional Commits. When opening a pull request, please be sure that either the pull request title, or each commit in the pull request, has one of the following prefixes:
+We use Conventional Commits. When opening a pull request, please be sure that each commit in the pull request, has one of the following prefixes:
 
 - `feat`: For when introducing a new feature. The result will be a new semver minor version of the package when it is next published.
 - `fix`: For bug fixes. The result will be a new semver patch version of the package when it is next published.
