@@ -1,6 +1,6 @@
 # Angular Starter
 
-Angular version 19.0.0 [Angular CLI](https://github.com/angular/angular-cli)
+Angular version 19.2.x [Angular CLI](https://github.com/angular/angular-cli)
 ![open_source](https://github.com/user-attachments/assets/968faa16-7381-4ed0-b7b2-226edaf742a7)
 
 
@@ -25,12 +25,12 @@ The app will reload automatically if you change any of the source files.
 
 ## What's included
 
--   [x] Minimal configuration.
--   [x] Angular Material.
--   [x] TailwindCss.
--   [x] Firebase with 2 projects configs (to separate dev and prod environments).
--   [x] Custom schematics.
--   [x] Auth components.
+-   [x] Minimal configuration
+-   [x] Angular Material
+-   [x] TailwindCss
+-   [x] Firebase with 2 projects configs (to separate dev and prod environments)
+-   [x] Custom schematics
+-   [x] Auth components
 
 ## Contribution
 
