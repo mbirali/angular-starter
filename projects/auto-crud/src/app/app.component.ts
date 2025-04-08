@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'ac-root',
-  imports: [
-    RouterOutlet,
-    MatButtonModule
-  ],
-  templateUrl: './app.component.html',
+  imports: [],
+  template: `
+    <h1>Welcome to {{title}}!</h1>
+
+    
+  `,
   styles: [],
 })
 export class AppComponent {
