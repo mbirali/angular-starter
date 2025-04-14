@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToolbarComponent } from './layouts/components/toolbar/toolbar.component';
 
 @Component({
   selector: 'ac-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ToolbarComponent],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
+    <ac-toolbar></ac-toolbar>
     <router-outlet />
   `,
   styles: [],

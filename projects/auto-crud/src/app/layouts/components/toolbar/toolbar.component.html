@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+    <span>Auto Crud</span>
+    
+    <span class="spacer"></span>
+    
+
+    <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+        <mat-icon>format_color_fill</mat-icon>
+      </button>
+      
+      <mat-menu #themeMenu="matMenu">
+
+        <button mat-menu-item>
+          <mat-icon>restore</mat-icon>
+          <span>Default</span>
+        </button>
+        
+
+        <button mat-menu-item>
+          <mat-icon>wb_sunny</mat-icon>
+          <span>Light</span>
+        </button>
+        
+
+        <button mat-menu-item>
+          <mat-icon>nights_stay</mat-icon>
+          <span>Dark</span>
+        </button>
+
+
+        <button mat-menu-item>
+          <mat-icon style="color: #3f51b5;">palette</mat-icon>
+          <span>Theme 1</span>
+        </button>
+        
+        <button mat-menu-item>
+          <mat-icon style="color: #ff4081;">palette</mat-icon>
+          <span>Theme 2</span>
+        </button>
+      </mat-menu>
+    
+
+  <button mat-icon-button [matMenuTriggerFor]="languageMenu">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #languageMenu="matMenu">
+    <button mat-menu-item>
+      <span>Français (Fr)</span>
+    </button>
+    <button mat-menu-item>
+      <span>English (En)</span>
+    </button>
+    <button mat-menu-item>
+      <span>Español (Sp)</span>
+    </button>
+  </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item>Admin</button>
+      <button mat-menu-item>Customer</button>
+    </mat-menu>
+  </mat-toolbar>
