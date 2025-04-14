@@ -15,7 +15,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --project=ngs --ssl --port=4200",
-    "build": "ng build --project=ngs"
+    "build": "ng build --project=ngs",
+    "build:ac": "ng build --project=auto-crud"
   },
   "dependencies": {
     "@angular/animations": "19.2.3",
