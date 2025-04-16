@@ -40,4 +40,4 @@ Feel free to build on top of it ^^
 
 Give it a star 🌟 to help this project reputation
 
-<a href="https://www.buymeacoffee.com/mbirali"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=mbirali&button_colour=40DCA5&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
+<a href="https://www.buymeacoffee.com/mbirali"><img src="https://img.buymeacoffee.com/button-api/?text=Support Project&emoji=☕&slug=mbirali&button_colour=40DCA5&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
