@@ -1,32 +1,40 @@
+<div class="px-4 sm:px-5">
+  <h1 class="text-2xl font-semibold mb-4">Inventory</h1>
 
-<div style="padding: 0 20px;">
-  <h1>Products</h1>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+  <!-- Bloc input + bouton -->
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
 
-    <mat-form-field appearance="outline" style="width: 300px;">
-      <mat-label>Recherche</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Rechercher un produit">
+    <!-- Input 100% -->
+    <mat-form-field appearance="outline" class="w-full sm:w-[300px]">
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search" />
     </mat-form-field>
 
-    <button mat-button color="accent" (click)="onAdd()">
-      Add Product
-    </button>
+    <!-- Bouton aligné à droite même sur mobile -->
+    <div class="w-full flex justify-end sm:w-auto">
+      <button mat-button color="accent" (click)="onAdd()">
+        <mat-icon>add</mat-icon>
+        Add
+      </button>
+    </div>
   </div>
 
+  <!-- Table responsive -->
+  <div class="overflow-x-auto">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 min-w-[600px] w-full">
+      @for (column of columns; track column) {
+        <ng-container matColumnDef="{{ column }}">
+          <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+          <td mat-cell *matCellDef="let product">{{ product[column] }}</td>
+        </ng-container>
+      }
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-
-     @for (column of columns; track column) {
-      <ng-container matColumnDef="{{ column }}">
-        <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
-        <td mat-cell *matCellDef="let element"> {{ element[column] }} </td>
-      </ng-container>
-    }
-
-    <tr mat-header-row *matHeaderRowDef="columns"></tr>
-    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-    
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
     </table>
-
-    <mat-paginator [pageSizeOptions]="[2,5,10]"></mat-paginator>
   </div>
+
+  <!-- Paginator responsive -->
+  <div class="mt-4 w-full overflow-x-auto">
+    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

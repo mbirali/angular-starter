@@ -6,7 +6,7 @@ import { ProductTableComponent } from "./inventory/components/product-table/prod
   selector: 'ac-root',
   imports: [RouterOutlet, ProductTableComponent],
   template: `
-    <ac-product-table>
+    <ac-product-table/>
     <router-outlet />
   `,
   styles: [],
