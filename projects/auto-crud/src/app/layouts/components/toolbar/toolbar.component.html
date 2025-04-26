@@ -1,0 +1,40 @@
+<mat-toolbar>
+    <h1 class="font-bold">Auto Crud</h1>
+    <div class="flex-1"></div>
+  
+    <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+      <mat-icon>format_color_fill</mat-icon>
+    </button>
+  
+    <mat-menu #themeMenu="matMenu">
+      <ng-container *ngFor="let theme of themes">
+        <button mat-menu-item (click)="changeTheme(theme.class)">
+          <mat-icon>{{ theme.icon }}</mat-icon>
+            {{theme.label}}
+        </button>
+      </ng-container>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="languageMenu">
+      <mat-icon>language</mat-icon>
+    </button>
+  
+    <mat-menu #languageMenu="matMenu">
+      <ng-container *ngFor="let language of languages">
+        <button mat-menu-item>
+            {{ language }}
+        </button>
+      </ng-container>
+    </mat-menu>
+  
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+      <mat-icon>person</mat-icon>
+    </button>
+  
+    <mat-menu #profileMenu="matMenu">
+      <ng-container *ngFor="let role of roles">
+        <button mat-menu-item>{{ role }}</button>
+      </ng-container>
+    </mat-menu>
+  </mat-toolbar>
+  

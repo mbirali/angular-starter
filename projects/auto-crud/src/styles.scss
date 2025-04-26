@@ -1,17 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
-
+@tailwind base;
+@tailwind utilities;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-html {
-  color-scheme: light dark;
-  @include mat.theme((
-    color: mat.$violet-palette,
-    typography: Roboto,
-    density: 0
-  ));
+body.light-mode {
+  background-color: #eeedf3;
 }
 
 
+body.dark-mode {
+  background-color: #2b2a42;
+}
+
+$palettes: (
+    "azure": mat.$azure-palette,
+    "yellow": mat.$yellow-palette,
+    "cyan": mat.$cyan-palette,
+    "magenta": mat.$magenta-palette,
+    "orange": mat.$orange-palette,
+    "spring-green": mat.$spring-green-palette,
+    "rose": mat.$rose-palette
+);
+
+
+@each $fbpalette, $matpalette in $palettes {
+    .#{$fbpalette}-theme {
+        // color-scheme: light dark;
+        @include mat.theme((color: $matpalette,
+                typography: Roboto,
+                density: 0,
+            ));
+    }
+}
