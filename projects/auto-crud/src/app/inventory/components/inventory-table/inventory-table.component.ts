@@ -1,18 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { Column, COLUMN_NAMES } from '../../product.type';
 import { TitleCasePipe } from '@angular/common';
-import { Product } from '../../product.interface';
-import { ProductService } from '../../product.service';
+import { InventoryService } from '../../inventory.service';
+import { InventoryType } from '../../inventory.type';
 
 
 @Component({
-  selector: 'ac-product-table',
+  selector: 'ac-inventory-table',
   imports: [
     MatTableModule,
     MatPaginatorModule,
@@ -23,23 +22,24 @@ import { ProductService } from '../../product.service';
     TitleCasePipe,
     MatIcon
   ],
-  templateUrl: './product-table.component.html',
-  styleUrl: './product-table.component.scss',
-  providers:[
-    ProductService
+  templateUrl: './inventory-table.component.html',
+  styleUrl: './inventory-table.component.scss',
+  providers: [
+    InventoryService
   ]
 })
-export class ProductTableComponent {
+export class InventoryTableComponent {
 
-  columns: Column[] = COLUMN_NAMES;
-  dataSource = new MatTableDataSource<Product>();
+  readonly #inventoryService = inject(InventoryService);
+
+  displayedColumns: string[] = ['id', 'name', 'category', 'price', 'stock'];
+  dataSource = new MatTableDataSource<InventoryType>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private readonly productService: ProductService) {}
 
   ngOnInit() {
-    this.dataSource.data = this.productService.getProducts();
+    this.dataSource.data = this.#inventoryService.getInventory();
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -51,7 +51,7 @@ export class ProductTableComponent {
   }
 
   onAdd() {
-
+    //Adding inventory
   }
 
 }

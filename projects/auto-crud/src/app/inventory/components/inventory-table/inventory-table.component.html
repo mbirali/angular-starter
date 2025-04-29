@@ -4,8 +4,8 @@
   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
 
     <mat-form-field appearance="outline" class="w-full sm:w-[300px]">
-      <mat-label>Search Product</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Search Product" />
+      <mat-label>Search Inventory</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search Inventory" />
     </mat-form-field>
 
     <div class="w-full flex justify-end sm:w-auto">
@@ -18,19 +18,19 @@
 
   <div class="overflow-x-auto">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 min-w-[600px] w-full">
-      @for (column of columns; track column) {
-        <ng-container matColumnDef="{{ column }}">
-          <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
-          <td mat-cell *matCellDef="let product">{{ product[column] }}</td>
-        </ng-container>
+      @for (column of displayedColumns; track column) {
+      <ng-container matColumnDef="{{ column }}">
+        <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+        <td mat-cell *matCellDef="let inventory">{{ inventory[column] }}</td>
+      </ng-container>
       }
 
-      <tr mat-header-row *matHeaderRowDef="columns"></tr>
-      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
 
   <div class="mt-4 w-full overflow-x-auto">
-    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons/>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons />
   </div>
 </div>

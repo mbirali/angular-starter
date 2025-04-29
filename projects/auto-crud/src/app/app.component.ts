@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProductTableComponent } from "./inventory/components/product-table/product-table.component";
+import { InventoryTableComponent } from "./inventory/components/inventory-table/inventory-table.component";
 
 @Component({
   selector: 'ac-root',
-  imports: [RouterOutlet, ProductTableComponent],
+  imports: [RouterOutlet, InventoryTableComponent],
   template: `
-    <ac-product-table/>
+    <ac-inventory-table/>
     <router-outlet />
   `,
   styles: [],

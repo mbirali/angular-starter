@@ -1,4 +1,4 @@
-export interface Product{
+export type InventoryType = {
     id: number;
     name: string;
     category: string;
