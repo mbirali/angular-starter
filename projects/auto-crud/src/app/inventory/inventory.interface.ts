@@ -1,7 +1,7 @@
-import { InventoryType } from "./inventory.type";
+import { Inventory } from "./inventory.type";
 
-export interface Inventory {
+export interface IInventory {
 
-    getInventory(): InventoryType[];
+    getInventory(): Inventory[];
 
 }

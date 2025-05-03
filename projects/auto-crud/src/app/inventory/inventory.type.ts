@@ -1,4 +1,4 @@
-export type InventoryType = {
+export type Inventory = {
     id: number;
     name: string;
     category: string;

@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormField } from '@angular/material/form-field';
@@ -7,7 +7,7 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { TitleCasePipe } from '@angular/common';
 import { InventoryService } from '../../inventory.service';
-import { InventoryType } from '../../inventory.type';
+import { Inventory } from '../../inventory.type';
 
 
 @Component({
@@ -26,14 +26,16 @@ import { InventoryType } from '../../inventory.type';
   styleUrl: './inventory-table.component.scss',
   providers: [
     InventoryService
-  ]
+  ],
+  encapsulation:ViewEncapsulation.None,
+
 })
 export class InventoryTableComponent {
 
   readonly #inventoryService = inject(InventoryService);
 
   displayedColumns: string[] = ['id', 'name', 'category', 'price', 'stock'];
-  dataSource = new MatTableDataSource<InventoryType>();
+  dataSource = new MatTableDataSource<Inventory>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
