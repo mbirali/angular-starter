@@ -23,12 +23,10 @@ import { Inventory } from '../../inventory.type';
     MatIcon
   ],
   templateUrl: './inventory-table.component.html',
-  styleUrl: './inventory-table.component.scss',
   providers: [
     InventoryService
   ],
-  encapsulation:ViewEncapsulation.None,
-
+  encapsulation: ViewEncapsulation.None,
 })
 export class InventoryTableComponent {
 
