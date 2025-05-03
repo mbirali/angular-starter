@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
+@tailwind base;
+@tailwind utilities;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -13,5 +15,10 @@ html {
     density: 0
   ));
 }
+
+.mat-mdc-notch-piece.mdc-notched-outline__notch {
+  border-right: 0px !important;
+}
+
 
 

@@ -1,0 +1,36 @@
+<div class="px-4 sm:px-5">
+  <h1 class="text-2xl font-semibold mb-4">Inventory</h1>
+
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
+
+    <mat-form-field appearance="outline" class="w-full sm:w-[300px]">
+      <mat-label>Search Inventory</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Phone" />
+    </mat-form-field>
+
+    <div class="w-full flex justify-end sm:w-auto">
+      <button mat-button color="accent" (click)="onAdd()">
+        <mat-icon [fontIcon]="'add'"/>
+        Add
+      </button>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 min-w-[600px] w-full">
+      @for (column of displayedColumns; track column) {
+      <ng-container matColumnDef="{{ column }}">
+        <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+        <td mat-cell *matCellDef="let inventory">{{ inventory[column] }}</td>
+      </ng-container>
+      }
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <div class="mt-4 w-full overflow-x-auto overflow-y-hidden">
+    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons />
+  </div>
+</div>
